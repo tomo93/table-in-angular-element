@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <!-- <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Testing our custom element</title>
+  <base href="/"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    /> -->
+
+    <style>
+      /* body {
+        background-color: aquamarine;
+      } */
+    </style>
+  </head>
+  <body>
+    <app-component> </app-component>
+
+    <input id="inp" type="text" />
+    <button onclick="setFilter()">Filtra ancora</button>
+    <div id="status"></div>
+    <script>
+      function setFilter() {
+        var x = document.getElementById("inp").value;
+        document.querySelector("app-component").setAttribute("inputfilter", x);
+      }
+      const component = document.querySelector("app-component");
+
+      // component.setAttribute("inputfilter", "o");
+
+      component.addEventListener("selectionEmitter", event => {
+        alert(event.detail);
+      });
+
+      component.addEventListener("deleteEmitter", event => {
+        console.log(event);
+
+        document.querySelector("#status").innerHTML =
+          "Cancellato recordo con id =" + event.detail;
+      });
+    </script>
+    <script src="angularapp.js"></script>
+  </body>
+</html>

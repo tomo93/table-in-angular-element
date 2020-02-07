@@ -1,0 +1,38 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+table {
+  width: 100%;
+}
+
+.mat-column-select {
+  overflow: initial;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+/* .mat-success {
+  background-color: green;
+  color: #fff;
+} */
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+/* toolbar styles */
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
