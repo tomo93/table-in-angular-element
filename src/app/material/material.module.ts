@@ -4,7 +4,8 @@ import {
   MatTableModule,
   MatInputModule,
   MatSortModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatPaginatorModule } from "@angular/material";
@@ -22,7 +23,8 @@ const MaterialComponents = [
   MatCheckboxModule,
   MatIconModule,
   MatCardModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

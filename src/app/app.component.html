@@ -38,14 +38,17 @@
   </button>
 </div>
 
-<mat-form-field>
-  <input
-    matInput
-    (keyup)="applyFilter($event.target.value)"
-    placeholder="Filter"
-  />
-</mat-form-field>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filtra"
+    />
+  </mat-form-field>
+</div>
 
+<!-- *******************************************Tabella************************************************** -->
 <div class="mat-elevation-z8">
   <mat-table
     [dataSource]="dataSource"

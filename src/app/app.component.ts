@@ -77,10 +77,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnInit() {
+    //qui bisogna recuperare il data source da un servizio con:
+    //this.dataSource.data = this.servicw.getThing();
+
+    // this.dataService.getPolicies().subscribe((result)=>{
+    //   this.dataSource  =  result.body;
+    // })
+
     console.log("ngOnInit called!");
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
-    //this.dataSource.filter = this.inputfilter.trim().toLowerCase();
   }
 
   ngAfterViewInit() {
@@ -163,6 +167,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
 
   // *********************************************************
 
+  /**
+   * Cancellare record dalla tabella
+   * Un evento viene lanciato con l'id del record da cancellare
+   * @param id id del record della tabella da eliminare
+   */
   onDeleteRow(id) {
     console.log("deletee" + id);
     this.deleteEmitter.emit(id);
