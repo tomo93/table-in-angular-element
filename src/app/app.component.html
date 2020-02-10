@@ -38,9 +38,10 @@
   </button>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="center center">
+<div fxLayout fxLayoutAlign="center center">
   <mat-form-field fxFlex="40%">
     <input
+      type="text"
       matInput
       (keyup)="applyFilter($event.target.value)"
       placeholder="Filtra"
@@ -131,6 +132,7 @@
     [pageSize]="5"
     [pageSizeOptions]="[5, 10, 20]"
     showFirstLastButtons
+    (page)="pageChanged($event)"
   >
   </mat-paginator>
 

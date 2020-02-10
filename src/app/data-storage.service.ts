@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
@@ -8,8 +8,9 @@ export class DataStorageService {
   constructor(private http: HttpClient) {}
 
   fetchElements() {
-    this.http.get("").subscribe(elements => {
-      console.log(elements);
-    });
+    // let headers: HttpHeaders = new HttpHeaders();
+    // headers = headers.append("Access-Control-Allow-Origin", "*");
+
+    return this.http.get("https://testtt.free.beeceptor.com/elements");
   }
 }

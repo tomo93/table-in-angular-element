@@ -12,6 +12,7 @@ import { MatPaginatorModule } from "@angular/material";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 const MaterialComponents = [
   MatButtonModule,
@@ -24,7 +25,8 @@ const MaterialComponents = [
   MatIconModule,
   MatCardModule,
   MatToolbarModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  FlexLayoutModule
 ];
 
 @NgModule({

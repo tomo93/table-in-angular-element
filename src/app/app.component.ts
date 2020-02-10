@@ -1,3 +1,4 @@
+import { DataStorageService } from "./data-storage.service";
 // tslint:disable-next-line: max-line-length
 import {
   Component,
@@ -22,18 +23,18 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
-  { position: 2, name: "Helium", weight: 4.0026, symbol: "He" },
-  { position: 3, name: "Lithium", weight: 6.941, symbol: "Li" },
-  { position: 4, name: "Beryllium", weight: 9.0122, symbol: "Be" },
-  { position: 5, name: "Boron", weight: 10.811, symbol: "B" },
-  { position: 6, name: "Carbon", weight: 12.0107, symbol: "C" },
-  { position: 7, name: "Nitrogen", weight: 14.0067, symbol: "N" },
-  { position: 8, name: "Oxygen", weight: 15.9994, symbol: "O" },
-  { position: 9, name: "Fluorine", weight: 18.9984, symbol: "F" },
-  { position: 10, name: "Neon", weight: 20.1797, symbol: "Ne" }
-];
+// const ELEMENT_DATA: PeriodicElement[] = [
+//   { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
+//   { position: 2, name: "Helium", weight: 4.0026, symbol: "He" },
+//   { position: 3, name: "Lithium", weight: 6.941, symbol: "Li" },
+//   { position: 4, name: "Beryllium", weight: 9.0122, symbol: "Be" },
+//   { position: 5, name: "Boron", weight: 10.811, symbol: "B" },
+//   { position: 6, name: "Carbon", weight: 12.0107, symbol: "C" },
+//   { position: 7, name: "Nitrogen", weight: 14.0067, symbol: "N" },
+//   { position: 8, name: "Oxygen", weight: 15.9994, symbol: "O" },
+//   { position: 9, name: "Fluorine", weight: 18.9984, symbol: "F" },
+//   { position: 10, name: "Neon", weight: 20.1797, symbol: "Ne" }
+// ];
 
 @Component({
   // selector: 'app-root',
@@ -50,7 +51,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
     "symbol",
     "actions"
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  dataSource: MatTableDataSource<PeriodicElement>;
 
   selection = new SelectionModel<PeriodicElement>(true, []);
 
@@ -63,7 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() inputfilter: string = "";
   selectedRow: any;
 
-  constructor() {}
+  constructor(private dService: DataStorageService) {}
 
   /**
    * Called before ngOnInit() and whenever one or more data-bound input properties change.
@@ -76,13 +78,20 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
+  fetchElements() {
+    console.log("fetchingg");
+
+    this.dService.fetchElements().subscribe((result: PeriodicElement[]) => {
+      this.dataSource.data = result;
+      console.log(result);
+    });
+  }
+
   ngOnInit() {
+    this.dataSource = new MatTableDataSource(); // create new object
+    this.fetchElements();
     //qui bisogna recuperare il data source da un servizio con:
     //this.dataSource.data = this.servicw.getThing();
-
-    // this.dataService.getPolicies().subscribe((result)=>{
-    //   this.dataSource  =  result.body;
-    // })
 
     console.log("ngOnInit called!");
   }
@@ -113,6 +122,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
    *   Funzione chiamta ognivolta una colonna viene ordinata (asc/desc)
    */
   sortData(event) {
+    console.log(event);
+  }
+
+  pageChanged(event) {
+    console.log("page changed");
     console.log(event);
   }
 
