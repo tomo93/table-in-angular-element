@@ -1,27 +1,72 @@
-# Mtable
+# Angular Elements Wrapper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+This project is a simple implementation of Angular Elements, which is a way to wrap Angular components as custom elements. 
+The component wrapped is the angular material table.
+Custom elements are a web standards-based way to create reusable and self-contained components that can be used anywhere in the HTML page. 
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js and npm installed on your computer.
+- Angular CLI installed globally on your computer.
 
-## Build
+### Installing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Clone the repository
 
-## Running unit tests
+```
+git clone https://github.com/tomo93/angular-table.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate to the project directory
 
-## Running end-to-end tests
+```
+cd angular-elements-wrapper
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3. Install the dependencies
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Usage
+
+1. Run the project
+
+```
+ng serve
+```
+
+2. Access the project in your browser at `http://localhost:4200/`
+
+## Deployment
+
+This project can be deployed by building the project using the Angular CLI and including the resulting files in your main HTML file.
+
+```
+ng build --prod
+```
+
+## Built With
+
+- [Angular](https://angular.io/) - The web framework used
+- [Angular CLI](https://cli.angular.io/) - The command line interface for Angular
+- [NPM](https://www.npmjs.com/) - Package manager
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/[your-username]/angular-elements-wrapper/tags). 
+
+## Authors
+
+- [Antonino Modica](https://github.com/tomo93)
+
+
