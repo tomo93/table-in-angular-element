@@ -18,13 +18,13 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
 ```
-git clone https://github.com/tomo93/table-in-angular-elemente.git
+git clone https://github.com/tomo93/table-in-angular-element.git
 ```
 
 2. Navigate to the project directory
 
 ```
-cd angular-elements-wrapper
+cd table-in-angular-element
 ```
 
 3. Install the dependencies
@@ -57,13 +57,6 @@ ng build --prod
 - [Angular CLI](https://cli.angular.io/) - The command line interface for Angular
 - [NPM](https://www.npmjs.com/) - Package manager
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/[your-username]/angular-elements-wrapper/tags). 
 
 ## Authors
 
